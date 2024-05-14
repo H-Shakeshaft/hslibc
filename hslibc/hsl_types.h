@@ -26,7 +26,7 @@
         - https://en.cppreference.com/w/c/preprocessor/replace
         - https://en.cppreference.com/w/cpp/preprocessor/replace
 */
-#if (defined(__cplusplus) && (__cplusplus >= 201103L)) || (defined(__STDC__) && (__STDC_VERSION__ >= 199901L))
+#if (__cplusplus >= 201103L) || (__STDC_VERSION__ >= 199901L)
     #define HSL_USE_FIXED_WIDTH_INTS
 #endif
 
@@ -117,24 +117,25 @@ typedef double f64;
 
 
 /*=========================== Static Aliases Start ==========================*/
-/// defines a static function which is *internal* to the current translation unit
+/* defines a static function which is *internal* to the current translation unit */
 #define INTERNAL static
 
-/// defines a static variable with *local* lexical scope
+/* defines a static variable with *local* lexical scope */
 #define LOCAL static
 
-/// defines a static variable with *global* lexical scope
+/* defines a static variable with *global* lexical scope */
 #define GLOBAL static
 /*============================ Static Aliases End ===========================*/
 
 
 /*=============================== Utils Start ===============================*/
-/// Provices a clear & searchable way of indicating C-style type casts; inspired
-/// by the static_cast, reinterpret, etc, cast functions available in C++.
+/* Provices a clear & searchable way of indicating C-style type casts; inspired
+    by the static_cast, reinterpret, etc, cast functions available in C++.
+*/
 #define CAST(T, V) ((T) V)
 /*================================ Utils End ================================*/
 
-#endif // HSLIBC_TYPES_H
+#endif /* HSLIBC_TYPES_H */
 /*
 This software is available under 2 licences - chose whichever you prefer.
 -------------------------------------------------------------------------------
